@@ -4,10 +4,8 @@ import numpy as np
 import os
 import csv
 from shutil import copyfile
-from project_hand_eye_to_pv import *
 import cv2
 import numpy as np
-# import cv2
 import random
 import json
 from PIL import Image, ImageDraw, ImageFont
@@ -39,9 +37,6 @@ def save_ply(output_path, points, rgb=None, cam2world_transform=None):
 
 def imread_pgm(pgmdir):
     depth_image = cv2.imread(pgmdir, -1)
-
-    # print(depth_image[100])
-
     return depth_image
 
 def fps_np(points, npoint):
@@ -194,7 +189,6 @@ def addTextToImg(img_path, txt="null"):
     # transform = transforms.PILToTensor()
     # Convert the PIL image to Torch tensor
     img_tensor = transform(image)
-    # Display edited image
     return img_tensor
 
 
