@@ -1,6 +1,16 @@
 # ikea_ego_dataset_toolbox_public
-tools to load clips from the ikea_ego_dataset and train i3d model 
 
+tools to process the raw dataset:
+the raw_data_processing directory can be used to process the raw dataset.
+run the raw_data_processing/main.py with the directory containing all recordings to be processed as an input arg.
+the scripts will recursively search the input directory argument and look for recording directories which will be identified by the suffix: recDir
+
+the directories found will be processed, this can be spliut into three major steps:
+1. data processing: create point clouds by projecting rgb on depth, projecting eye focus point and hand joint points on rgb image.
+2. visualization: create an mp4 clip of the recording from the rgb images
+3. normalization: create more informative and and eye csv files, synchronize eye, hand, rgb, and depth data. dump synchronized data into norm folder.
+
+tools to load clips from the ikea_ego_dataset and train i3d model:
 
 use the Dataloader.py to load clips from the ikea_ego_dataset.
 
