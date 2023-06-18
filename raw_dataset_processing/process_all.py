@@ -8,8 +8,8 @@
 """
 import argparse
 from pathlib import Path
-from raw_dataset_processing.project_hand_eye_to_pv import project_hand_eye_to_pv, process_hand_eye_data
-# from raw_dataset_processing.raw_dataset_procassing_utils import check_framerates
+from raw_dataset_processing.project_hand_eye_to_pv import project_hand_eye_to_pv
+from raw_dataset_processing.raw_dataset_procassing_utils import process_hand_eye_data
 from raw_dataset_processing.save_pclouds import save_pclouds
 from raw_dataset_processing.convert_images import convert_images
 from glob import glob

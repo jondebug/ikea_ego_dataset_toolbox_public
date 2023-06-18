@@ -14,8 +14,8 @@ import numpy as np
 import cv2
 import open3d as o3d
 
-from raw_dataset_processing.project_hand_eye_to_pv import load_pv_data, match_timestamp
-from raw_dataset_processing.raw_dataset_procassing_utils import load_lut, DEPTH_SCALING_FACTOR, project_on_depth, project_on_pv
+# from raw_dataset_processing.project_hand_eye_to_pv import load_pv_data, match_timestamp
+from raw_dataset_processing.raw_dataset_procassing_utils import load_lut, DEPTH_SCALING_FACTOR, project_on_depth, project_on_pv, load_pv_data, matchTimestamp_arg
 
 
 def save_output_txt_files(folder, shared_dict):
@@ -116,7 +116,7 @@ def save_single_pcloud(shared_dict,
             if has_pv:
                 # if we have pv, get vertex colors
                 # get the pv frame which is closest in time
-                target_id = match_timestamp(timestamp, pv_timestamps)
+                target_id = matchTimestamp_arg(timestamp, pv_timestamps)
                 pv_ts = pv_timestamps[target_id]
                 rgb_path = str(folder / 'PV' / f'{pv_ts}.png')
                 assert Path(rgb_path).exists()

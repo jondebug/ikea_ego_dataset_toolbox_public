@@ -1,7 +1,8 @@
 from pathlib import Path
-from raw_dataset_processing.raw_dataset_procassing_utils import getPvTimestamps, getDepthTimestamps,\
-    getHandEyeTimestamps, matchTimestamp, build_normalized_data_dir, removeOriginalPlyFiles, copyRenamePvImage,\
-    copyRenameDepthImage, copyRenameHandEyeImage, processHandEyeData
+
+from raw_dataset_processing.raw_dataset_procassing_utils import getPvTimestamps, getDepthTimestamps, \
+    getHandEyeTimestamps, matchTimestamp, build_normalized_data_dir, removeOriginalPlyFiles, copyRenamePvImage, \
+    copyRenameDepthImage, copyRenameHandEyeImage, NormalizeHandEyeData
 from glob import glob
 import numpy as np
 import os
@@ -12,7 +13,7 @@ def create_processed_had_eye_csv(w_path):
     assert (w_path / "norm").exists()
     if (not (w_path / "norm" / "norm_proc_hand_data.csv").exists()) or (not (w_path / "norm" / "norm_proc_eye_data.csv").exists() ):
         if (w_path / "PV").exists():
-            if processHandEyeData(w_path) == -1:
+            if NormalizeHandEyeData(w_path) == -1:
                 return -1
     else:
         print(f"{w_path} already has proc_norm_hand_eye_data.csv file!! moving on ")

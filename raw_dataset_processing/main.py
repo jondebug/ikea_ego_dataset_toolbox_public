@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    # process_all_recordings_in_path(path=args.recording_path, project_hand_eye=args.project_hand_eye)
+    process_all_recordings_in_path(path=args.recording_path, project_hand_eye=args.project_hand_eye)
     visualize_all_recordings_in_path(args.recording_path)
     normalizeAllRecordingsInPath(args.recording_path)
 

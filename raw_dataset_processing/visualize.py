@@ -10,6 +10,7 @@ def visualize_all_recordings_in_path(path):
     if "_recDir" in path[-8:] and "eye_hands" in os.listdir(path):
         for child in os.listdir(path):
             if ".avi" in child:
+                print(f"video recording already exists{child}")
                 return
         print(f"calling process_all for {path}")
         print(os.listdir(path))
