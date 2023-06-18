@@ -11,7 +11,7 @@ import json
 from PIL import Image, ImageDraw, ImageFont
 import struct
 import open3d as o3d
-import numexpr as ne
+# import numexpr as ne
 
 import torchvision.transforms as transforms
 
@@ -671,8 +671,7 @@ def processHandEyeData(folder):
 
             eye_csvwriter.writerow(eye_data_row)
             hand_csvwriter.writerow(hand_data_row)
-            # cv2.imwrite(str(output_folder / 'hands') + 'proj{}.png'.format(str(sample_timestamp).zfill(4)), img)
-            # cv2.imwrite(f"{output_folder}/{str(sample_timestamp)}.png", img)
+
 
 def squeeze_class_names(class_names):
     """
